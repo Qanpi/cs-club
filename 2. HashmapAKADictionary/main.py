@@ -1,6 +1,7 @@
 text = "How could we count how many times I said 'how' in this sentence we?"
 
 words = text.split(" ")
+print(words)
 frequencies = {}
 
 for w in words:
