@@ -17,9 +17,8 @@ function train() {
   let r = random(255);
   let g = random(255);
   let b = random(255);
-
   let target = predictColor(r, g, b);
-  nn.train([r, g, b, 255], target);
+  nn.train([r, g, b, 200], target);
 }
 
 function mousePressed() {
@@ -27,10 +26,10 @@ function mousePressed() {
   let g = random(255);
   let b = random(255);
   
-  background(r, 0, 0);
+  background(r, g, b);
   drawText();
   
-  let guessedColor = nn.guess([r, g, b, 255]);
+  let guessedColor = nn.guess([r, g, b, 200]);
   
   let correctColor = predictColor(r, g, b);
   
@@ -51,7 +50,7 @@ function drawPick(color, size) {
 function predictColor(r, g, b) {
   let threshold = 300;
 
-  if (r < 100 && g < 200 && b < 300) {
+  if (r < 100 && g < 200 && b < 100) {
     return 1; //white
   } else {
     return -1; //black
