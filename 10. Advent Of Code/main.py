@@ -55,7 +55,6 @@ for line in recipe.split("\n"):
         boxes[to_].append(box)
         boxes[from_].pop()
 
-# DON'T MAKE EDITS BELOW THIS LINE
 
 for i in range(max([len(l) for l in boxes]), -1, -1):
     for col in boxes:
