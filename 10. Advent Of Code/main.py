@@ -8,17 +8,17 @@ move 3 from 1 to 3
 move 2 from 2 to 1
 move 1 from 1 to 2"""
 
-demo_input = """
-    [K]
-    [D]    
-[A] [C]    
-[Z] [B] [C]
- 1   2   3 
+# demo_input = """
+#     [K]
+#     [D]    
+# [A] [C]    
+# [Z] [B] [C]
+#  1   2   3 
 
-move 3 from 2 to 1
-move 3 from 1 to 3
-move 1 from 2 to 1
-move 3 from 3 to 2"""
+# move 3 from 2 to 1
+# move 3 from 1 to 3
+# move 1 from 2 to 1
+# move 3 from 3 to 2"""
 
 crates, recipe = demo_input.split("\n\n")
 
@@ -54,7 +54,14 @@ for line in recipe.split("\n"):
 
         boxes[to_].append(box)
         boxes[from_].pop()
-    print(boxes)
+
+# DON'T MAKE EDITS BELOW THIS LINE
+
+for i in range(max([len(l) for l in boxes]), -1, -1):
+    for col in boxes:
+        if i < len(col): print(f"[{col[i]}]", end=" ")
+        else: print("    ", end="")
+    print()
 
 
 

@@ -42,8 +42,9 @@ for line in recipe.split("\n"):
         boxes[to_].append(box)
         boxes[from_].pop()
 
-print(boxes)
-
-
-
+for i in range(max([len(l) for l in boxes]), -1, -1):
+    for col in boxes:
+        if i < len(col): print(f"[{col[i]}]", end=" ")
+        else: print("    ", end="")
+    print()
         
