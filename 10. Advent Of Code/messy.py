@@ -9,9 +9,6 @@ move 3 from 1 to 3
 move 2 from 2 to 1
 move 1 from 1 to 2"""
 
-#boxes[0] = [Z, N ]
-#boxes[1] = [M, C, D]
-
 crates, recipe = demo_input.split("\n\n")
 
 boxes = [[], [], []]
@@ -22,16 +19,10 @@ for line in crates.split("\n"):
         box = line[col:col+4]
 
         box = box.replace("[", "")
-        box = box.replace("]", "")
-        box = box.strip()
-        # "  a      " -> "a"
-        print(box)
 
         if box in ["1", "2", "3"]: continue
 
         if box != "": boxes[col//4].insert(0, box)
-
-print(boxes)
 
 for line in recipe.split("\n"):
     instruction = []
@@ -42,11 +33,11 @@ for line in recipe.split("\n"):
             instruction.append(int(char))
 
     times = instruction[0]
-    from_ = instruction[1] - 1
+    from_ = instruction[1]
     to_ = instruction[2] - 1
 
     for i in range(times):
-        box = boxes[from_][-1]
+        box = boxes[from_][0]
 
         boxes[to_].append(box)
         boxes[from_].pop()
