@@ -1,0 +1,37 @@
+html,body {
+  background: green;
+  font-family: "Comic Sans MS";
+}
+
+img {
+  border: none;
+  float: right;
+  height: 400px;
+}
+
+#walter-container {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 1000px;
+}
+
+#walter-container h1 {
+  color: white;
+  font-family: times;
+  font-size: 112px;
+  margin: 0;
+}
+
+#walter-container h3 {
+  font-size: 40px;
+  font-weight: normal;
+  color: yellow;
+  margin-top: 0;
+}
+
+#walter-container p{
+  font-weight: bold;
+  font-size: 24px;
+  color: yellow;
+}
